@@ -1,1 +1,339 @@
-<!DOCTYPE html><html lang="mr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>नोटीस बोर्ड | वरवडे ग्रामपंचायत</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet"><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans Devanagari',sans-serif;background:#f4f6fa;color:#222}header{background:linear-gradient(135deg,#0D2B5E,#1a3d7c);color:#fff;padding:22px 16px;text-align:center}header h1{font-size:22px}nav{background:#fff;border-bottom:2px solid #FF6B00;display:flex;flex-wrap:wrap;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)}nav a{padding:12px 16px;color:#0D2B5E;text-decoration:none;font-size:14px;font-weight:600}nav a.active,nav a:hover{background:#0D2B5E;color:#fff}main{max-width:900px;margin:24px auto;padding:0 16px 40px}.card{background:#fff;border-radius:10px;padding:20px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,.06)}.card h2{color:#0D2B5E;margin-bottom:10px;font-size:18px;border-bottom:2px solid #FF6B00;padding-bottom:6px;display:inline-block}table{width:100%;border-collapse:collapse;margin-top:8px}td,th{padding:8px;border:1px solid #eee;font-size:13px;text-align:left}.gallery{display:flex;flex-wrap:wrap;gap:10px}.gallery img{width:150px;height:120px;object-fit:cover;border-radius:8px}input,button{font-family:inherit;font-size:14px;padding:8px;border:1px solid #ccc;border-radius:6px}button{background:#0D2B5E;color:#fff;border:none;cursor:pointer;padding:9px 16px}.maplink{display:inline-block;margin-top:8px;background:#1a5c2a;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:13px}footer{text-align:center;padding:16px;color:#888;font-size:12px}</style></head><body><header><h1>🏛️ वरवडे ग्रामपंचायत</h1></header><nav><a href="index.html">मुख्य पान</a><a href="panch-info.html">पंचायतीची माहिती</a><a href="documents.html">शासकीय योजना</a><a href="notices.html" class="active">नोटीस बोर्ड</a><a href="gallery.html">फोटो गॅलरी</a><a href="tax.html">मालमत्ता कर</a><a href="contact.html">संपर्क</a></nav><main><div class="card"><h2>नोटीस बोर्ड</h2><div style="margin-bottom:12px"><b>faas</b> <span style="color:#888;font-size:12px">(12/05/2026)</span><p>-</p></div></div></main><footer>© 2026 वरवडे ग्रामपंचायत — ग्रामपंचायत व्यवस्थापन प्रणालीद्वारे तयार</footer></body></html>
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>नोटीस बोर्ड | ग्रामपंचायत वरवडे</title>
+
+<style>
+body {
+    margin:0;
+    font-family: Arial,sans-serif;
+    background:#f4f6f8;
+}
+.top-header {
+    text-align:center;
+    padding:20px;
+    font-size:26px;
+    font-weight:bold;
+    background: linear-gradient(to right,#ff9933,#ffffff,#138808);
+    color:#000;
+}
+.menu {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    background:#003f7f;
+}
+.menu a {
+    color:#fff;
+    padding:12px 16px;
+    text-decoration:none;
+    font-weight:bold;
+}
+.menu a:hover {
+    background:#002a55;
+}
+.news-bar {
+    display:flex;
+    align-items:center;
+    background:#fff3cd;
+    border-top:2px solid #ff9800;
+    border-bottom:2px solid #ff9800;
+    padding:8px 10px;
+    font-weight:bold;
+}
+.news-title {
+    color:#d84315;
+    margin-right:10px;
+    white-space:nowrap;
+}
+.container {
+    max-width:1000px;
+    margin:20px auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+.notice-card {
+    border:1px solid #ccc;
+    border-left:5px solid #003f7f;
+    margin-bottom:15px;
+    padding:12px 15px;
+    background:#fafafa;
+    border-radius:5px;
+}
+.notice-card h3 {
+    margin:0 0 5px 0;
+    color:#003f7f;
+}
+.notice-card p {
+    margin:0;
+    font-size:15px;
+}
+.notice-date {
+    font-size:13px;
+    color:#555;
+    margin-bottom:5px;
+}
+
+/* ✅ NEW SECTIONS */
+.section {
+    margin-top:25px;
+    padding:15px;
+    background:#ffffff;
+    border-radius:8px;
+    border:1px solid #ddd;
+}
+.section h2 {
+    margin-top:0;
+    color:#b30000;
+}
+.section a {
+    display:block;
+    padding:6px 0;
+    text-decoration:none;
+    color:#003366;
+    font-weight:bold;
+}
+iframe {
+    width:100%;
+    height:300px;
+    border:none;
+    border-radius:8px;
+}
+</style>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MKCTMSRM8R"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MKCTMSRM8R');
+</script>
+</head>
+
+<body>
+
+<div class="top-header">🌾 ग्रामपंचायत वरवडे – नोटीस बोर्ड</div>
+
+<div class="menu">
+    <a href="index.html">मुख्य पान</a>
+    <a href="panch-info.html">पंचायतीची माहिती</a>
+    <a href="documents.html">शासकीय योजना</a>
+    <a href="notices.html">नोटीस बोर्ड</a>
+    <a href="question.html">प्रश्न सूची</a>
+    <a href="gallery.html">फोटो गॅलरी</a>
+    <a href="tax.html">मालमत्ता कर</a>
+    <a href="contact.html">संपर्क</a>
+</div>
+
+<div class="news-bar">
+    <span class="news-title">📰 ताज्या सूचना :</span>
+    <marquee scrollamount="5">
+        🏠 घरपट्टी व पाणीपट्टी भरून ग्रामपंचायत ला सहकार्य करावे. | 🧹 स्वच्छता मोहिमेत सहभागी व्हा
+    </marquee>
+</div>
+
+<div class="container">
+
+    
+<h2>सर्व नोटीसेस / सूचना</h2>
+
+<div class="notice-card">
+    <div class="notice-date">25/11/2025</div>
+    <h3>घरपट्टी व पाणीपट्टी</h3>
+    <p>घरपट्टी व पाणीपट्टी भरून ग्रामपंचायत ला सहकार्य करावे.</p>
+</div>
+
+<div class="notice-card">
+    <div class="notice-date">20/11/2025</div>
+    <h3>मुख्यमंत्री समृद्ध पंचायत राज अभियान</h3>
+    <p>मुख्यमंत्री समृद्ध पंचायत राज अभियानास ३१ मार्च २०२६ पर्यंत मुदतवाढ देण्यात आली आहे.</p>
+</div>
+
+<div class="notice-card">
+    <div class="notice-date">15/11/2025</div>
+    <h3>स्वच्छता मोहिम</h3>
+    <p>सर्व ग्रामस्थांनी स्वच्छता मोहिमेत सहभागी व्हावे.</p>
+</div>
+
+<!-- 🌦️ WEATHER -->
+<div class="section">
+<h2>🌦️ आजचे हवामान</h2>
+<div id="weather">लोड होत आहे...</div>
+</div>
+
+<div class="section">
+  <h2>📰 मराठी वर्तमानपत्रे</h2>
+
+  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:15px;">
+    <a href="https://www.esakal.com/" target="_blank">
+      <img src="images/logos/esakal.png" style="height:28px;">
+    </a>
+
+    <a href="https://www.lokmat.com/" target="_blank">
+      <img src="images/logos/lokmat.png" style="height:28px;">
+    </a>
+
+    <a href="https://maharashtratimes.com/" target="_blank">
+      <img src="images/logos/maharashtratimes.png" style="height:28px;">
+    </a>
+
+    <a href="https://www.loksatta.com/" target="_blank">
+      <img src="images/logos/loksatta.png" style="height:28px;">
+    </a>
+  </div>
+</div>
+
+<div class="section" style="margin-top:20px;">
+  <h2>📺 मराठी न्यूज चॅनेल</h2>
+
+  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:15px;">
+    <a href="https://www.tv9marathi.com/" target="_blank">
+      <img src="images/logos/tv9.png" style="height:28px;">
+    </a>
+
+    <a href="https://www.abpmajha.com/" target="_blank">
+      <img src="images/logos/abpmajha.png" style="height:28px;">
+    </a>
+
+    <a href="https://zeenews.india.com/marathi" target="_blank">
+      <img src="images/logos/zee24taas.png" style="height:28px;">
+    </a>
+
+    <a href="https://www.news18marathi.com/" target="_blank">
+      <img src="images/logos/news18.png" style="height:28px;">
+    </a>
+  </div>
+</div>
+
+<div class="section" style="margin-top:20px;">
+  <h2>🧺🍅🥕🧅🌶️आजचे बाजारभाव</h2>
+
+  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:15px;">
+    <a class="btn" href="https://www.commoditymarketlive.com/mandi-price-market/solapur-apmc" target="_blank">
+  👉 सोलापूर APMC बाजारभाव पहा
+  </a>
+    <a class="btn" href="https://www.krushikranti.com/bajarbhav/solapur-bajar-bhav-today" target="_blank">
+  👉 कृषीक्रांती बाजारभाव पहा
+  </a>
+
+    
+  </div>
+</div>
+
+</div>
+
+<script>
+const apiKey = "b49514c717e32754db5ef2f43c71e93c";
+
+const lat = 17.96;   // Warawade (Madha)
+const lon = 75.31;
+
+// English → Marathi mapping
+function weatherMarathi(main){
+  switch(main){
+    case "Clear": return "स्वच्छ आकाश";
+    case "Clouds": return "ढगाळ वातावरण";
+    case "Rain": return "पाऊस";
+    case "Drizzle": return "रिमझिम पाऊस";
+    case "Thunderstorm": return "मेघगर्जना व वादळ";
+    case "Snow": return "हिमवृष्टी";
+    case "Mist": return "धुके";
+    case "Haze": return "धुरकट वातावरण";
+    case "Fog": return "दाट धुके";
+    case "Smoke": return "धूर";
+    case "Dust": return "धूळ";
+    case "Sand": return "वाळूची धूळ";
+    case "Ash": return "राखेचे कण";
+    case "Squall": return "जोरदार वारे";
+    case "Tornado": return "चक्रीवादळ";
+    default: return "हवामान स्थिती";
+  }
+}
+
+
+/* 🔹 CURRENT WEATHER */
+fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
+.then(r => r.json())
+.then(current => {
+
+  const temp = current.main.temp;
+  const humidity = current.main.humidity;
+  const statusMR = weatherMarathi(current.weather[0].main);
+
+  /* 🔹 FORECAST (Rain Probability) */
+  fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
+  .then(r => r.json())
+  .then(forecast => {
+
+    // पुढील 3 तासातील पाऊस शक्यता
+    let pop = forecast.list[0].pop; 
+    let rainChance = Math.round(pop * 100);
+
+   document.getElementById("weather").innerHTML =
+`<div style="
+    display:grid; 
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); 
+    gap:15px; 
+    font-family:Arial,sans-serif;
+    margin-top:10px;
+">
+
+  <!-- तापमान -->
+  <div style="border-radius:12px; padding:18px 10px; text-align:center; background:#e8f4ff; color:#0b5ed7;">
+    <div style="font-size:26px; font-weight:bold; margin-bottom:5px;">${temp}°C</div>
+    <div style="font-size:15px; font-weight:600;">🌡️ तापमान</div>
+  </div>
+
+  <!-- हवामान स्थिती -->
+  <div style="border-radius:12px; padding:18px 10px; text-align:center; background:#eaf7ea; color:#1e7e34;">
+    <div style="font-size:26px; font-weight:bold; margin-bottom:5px;">${statusMR}</div>
+    <div style="font-size:15px; font-weight:600;">☁️ स्थिती</div>
+  </div>
+
+  <!-- पाऊस शक्यता -->
+  <div style="border-radius:12px; padding:18px 10px; text-align:center; background:#fff3e0; color:#ef6c00;">
+    <div style="font-size:26px; font-weight:bold; margin-bottom:5px;">${rainChance}%</div>
+    <div style="font-size:15px; font-weight:600;">🌧️ पाऊस शक्यता</div>
+  </div>
+
+  <!-- आर्द्रता -->
+  <div style="border-radius:12px; padding:18px 10px; text-align:center; background:#f3e8ff; color:#6f42c1;">
+    <div style="font-size:26px; font-weight:bold; margin-bottom:5px;">${humidity}%</div>
+    <div style="font-size:15px; font-weight:600;">💧 आर्द्रता</div>
+  </div>
+
+</div>
+
+<p style="text-align:center; font-weight:bold; margin-top:10px;">
+📍 ठिकाण : वरवडे (ता. माढा)
+</p>`;
+
+  });
+})
+.catch(() => {
+  document.getElementById("weather").innerHTML =
+  "⚠️ हवामान माहिती सध्या उपलब्ध नाही";
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
