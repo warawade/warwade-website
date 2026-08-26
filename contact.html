@@ -1,1 +1,245 @@
-<!DOCTYPE html><html lang="mr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>संपर्क | वरवडे ग्रामपंचायत</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet"><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Noto Sans Devanagari',sans-serif;background:#f4f6fa;color:#222}header{background:linear-gradient(135deg,#0D2B5E,#1a3d7c);color:#fff;padding:22px 16px;text-align:center}header h1{font-size:22px}nav{background:#fff;border-bottom:2px solid #FF6B00;display:flex;flex-wrap:wrap;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)}nav a{padding:12px 16px;color:#0D2B5E;text-decoration:none;font-size:14px;font-weight:600}nav a.active,nav a:hover{background:#0D2B5E;color:#fff}main{max-width:900px;margin:24px auto;padding:0 16px 40px}.card{background:#fff;border-radius:10px;padding:20px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,.06)}.card h2{color:#0D2B5E;margin-bottom:10px;font-size:18px;border-bottom:2px solid #FF6B00;padding-bottom:6px;display:inline-block}table{width:100%;border-collapse:collapse;margin-top:8px}td,th{padding:8px;border:1px solid #eee;font-size:13px;text-align:left}.gallery{display:flex;flex-wrap:wrap;gap:10px}.gallery img{width:150px;height:120px;object-fit:cover;border-radius:8px}input,button{font-family:inherit;font-size:14px;padding:8px;border:1px solid #ccc;border-radius:6px}button{background:#0D2B5E;color:#fff;border:none;cursor:pointer;padding:9px 16px}.maplink{display:inline-block;margin-top:8px;background:#1a5c2a;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:13px}footer{text-align:center;padding:16px;color:#888;font-size:12px}</style></head><body><header><h1>🏛️ वरवडे ग्रामपंचायत</h1></header><nav><a href="index.html">मुख्य पान</a><a href="panch-info.html">पंचायतीची माहिती</a><a href="documents.html">शासकीय योजना</a><a href="notices.html">नोटीस बोर्ड</a><a href="gallery.html">फोटो गॅलरी</a><a href="tax.html">मालमत्ता कर</a><a href="contact.html" class="active">संपर्क</a></nav><main><div class="card"><h2>संपर्क</h2><p>📍 पत्ता: varvade</p><p>📞 फोन: 9766893604</p><p>✉️ ईमेल: warawade1304@gmail.com</p><p>👤 सरपंच: श्री.नागनाथ साहेबराव पाटील</p><p>👤 ग्रामसेवक: श्रीहरी अशोक चव्हाण</p></div></main><footer>© 2026 वरवडे ग्रामपंचायत — ग्रामपंचायत व्यवस्थापन प्रणालीद्वारे तयार</footer></body></html>
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<title>संपर्क | ग्रामपंचायत</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+}
+
+/* Header */
+.top-header{
+    text-align:center;
+    padding:20px;
+    font-size:26px;
+    font-weight:bold;
+    color:#000;
+    background: linear-gradient(to right,#ff9933,#ffffff,#138808);
+}
+/* Menu */
+.menu{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    background:#003f7f;
+}
+.menu a{
+    color:white;
+    padding:12px 18px;
+    text-decoration:none;
+    font-weight:bold;
+}
+.menu a:hover{
+    background:#002a55;
+}
+
+/* Container */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+/* Section box */
+.box{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:25px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+.box h2{
+    margin-top:0;
+    color:#003f7f;
+}
+
+/* Form */
+input, textarea, button{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    margin-bottom:15px;
+    font-size:15px;
+}
+
+button{
+    background:#003f7f;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+}
+button:hover{
+    background:#002a55;
+}
+
+/* Map */
+iframe{
+    width:100%;
+    height:300px;
+    border:0;
+}
+
+/* Message */
+#msg{
+    font-weight:bold;
+    margin-top:10px;
+}
+.success{color:green;}
+.error{color:red;}
+</style>
+    <!-- ✅ GOOGLE ANALYTICS इथेच टाका -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MKCTMSRM8R');
+</script>
+<!-- ✅ GOOGLE ANALYTICS END -->
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="top-header">📞 संपर्क</div>
+
+<!-- Menu -->
+<div class="menu">
+    <a href="index.html">मुख्य पान</a>
+    <a href="panch-info.html">पंचायतीची माहिती</a>
+    <a href="documents.html">शासकीय योजना</a>
+    <a href="notices.html">नोटीस बोर्ड</a>
+    <a href="question.html">प्रश्न सूची</a>
+    <a href="gallery.html">फोटो गॅलरी</a>
+    <a href="tax.html">मालमत्ता कर</a>
+    <a href="contact.html">संपर्क</a>
+</div>
+
+<div class="container">
+
+    <!-- Contact Details -->
+    <div class="box">
+        <h2>📌 संपर्क तपशील</h2>
+        <p><b>ग्रामपंचायत नाव:</b> वरवडे </p>
+        <p><b>तालुका:</b> माढा </p>
+        <p><b>जिल्हा:</b> सोलापूर </p>
+        <p><b>फोन:</b> 9404694111 </p>
+        <p><b>ई-मेल:</b> warawade1304@gmail.com</p>
+       
+
+<p style="margin-top:15px;"><b>🌐 सोशल मीडिया:</b></p>
+
+<div style="display:flex; gap:15px; align-items:center; flex-wrap:wrap;">
+
+    <a href="https://www.facebook.com/share/1D4rZi35tV/"
+       target="_blank"
+       style="display:flex; align-items:center; gap:6px; text-decoration:none;
+              background:#f1f1f1; padding:6px 10px; border-radius:6px; color:#000; font-weight:bold;">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+             style="width:22px; height:22px;">
+        Facebook
+    </a>
+
+    <a href="https://www.instagram.com/mazi_vasundhara_gp_warawade?igsh=MWs3M3k0MjB3NG5v"
+       target="_blank"
+       style="display:flex; align-items:center; gap:6px; text-decoration:none;
+              background:#f1f1f1; padding:6px 10px; border-radius:6px; color:#000; font-weight:bold;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+             style="width:22px; height:22px;">
+        Instagram
+    </a>
+
+    <a href="https://youtube.com/@mazivasundharagpwarawade?si=iaJYId_QJppVHtOa"
+       target="_blank"
+       style="display:flex; align-items:center; gap:6px; text-decoration:none;
+              background:#f1f1f1; padding:6px 10px; border-radius:6px; color:#000; font-weight:bold;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+             style="width:22px; height:22px;">
+        YouTube
+    </a>
+
+</div>
+
+    </div>
+
+   <!-- Google Map -->
+<div class="box">
+    <h2>🗺️ Google Map Location</h2>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d948.7979238335566!2d75.31305839102048!3d17.969816287212648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc4699215530297%3A0xfcf07f2380c95318!2z4KSX4KWN4KSw4KS-4KSu4KSq4KSC4KSa4KS-4KSv4KSkIOCkleCkvuCksOCljeCkr-CkvuCksuCkryzgpLXgpLDgpLXgpKHgpYcg4KSk4KS-LuCkruCkvuCkouCkvg!5e0!3m2!1sen!2sin!4v1765719032418!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        
+</div>
+
+
+    <!-- Complaint Form -->
+    <div class="box">
+        <h2>✍️ तक्रार / सूचना नोंद</h2>
+
+        <form id="complaintForm">
+            <label>नाव</label>
+            <input type="text" name="name" required>
+
+            <label>मोबाईल नंबर</label>
+            <input type="text" name="mobile" required>
+
+            <label>तक्रारीचा विषय</label>
+            <input type="text" name="subject" required>
+
+            <label>तक्रार / सूचना</label>
+            <textarea name="message" rows="4" required></textarea>
+
+            <button type="submit">तक्रार सबमिट करा</button>
+        </form>
+
+        <div id="msg"></div>
+    </div>
+
+</div>
+
+<script>
+const API_URL = "https://script.google.com/macros/s/AKfycbzpbBi6t7UzxyRUeuDnbrDAwkJzrh38waD8A11KPCzeDVncIDcEJkqDFtJsEZ6eCfj3/exec";
+
+document.getElementById("complaintForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    fetch(API_URL, {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById("msg").innerHTML =
+            "<span class='success'>✅ तक्रार यशस्वीपणे नोंद झाली</span>";
+        this.reset();
+        console.log(data);
+    })
+    .catch(err => {
+        document.getElementById("msg").innerHTML =
+            "<span class='error'>❌ तक्रार नोंद करताना अडचण आली</span>";
+        console.error(err);
+    });
+});
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
