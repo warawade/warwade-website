@@ -203,10 +203,16 @@ iframe{
 </div>
 
 <script>
-const API_URL = "https://script.google.com/macros/s/AKfycbzpbBi6t7UzxyRUeuDnbrDAwkJzrh38waD8A11KPCzeDVncIDcEJkqDFtJsEZ6eCfj3/exec";
+const API_URL = "";
 
 document.getElementById("complaintForm").addEventListener("submit", function(e){
     e.preventDefault();
+
+    if(!API_URL){
+        document.getElementById("msg").innerHTML =
+            "<span class='error'>⚠️ तक्रार फॉर्म अजून सुरू केलेला नाही. कृपया थेट फोन/ईमेलवर संपर्क करा.</span>";
+        return;
+    }
 
     const formData = new FormData(this);
 
