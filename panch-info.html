@@ -148,6 +148,7 @@ h2{
     <a href="gallery.html">फोटो गॅलरी</a>
     <a href="tax.html">मालमत्ता कर</a>
     <a href="contact.html">संपर्क</a>
+    <a href="https://github.com/warawade/warwade-website/issues" target="_blank">📋 तक्रार पहा</a>
 </div>
 
 <div class="container">
@@ -168,12 +169,6 @@ h2{
 <select id="committeeFilter" onchange="loadTable()" 
 style="padding:8px;width:100%;max-width:300px;margin:10px 0;">
     <option value="all">सर्व समित्या</option>
-    <option value="ग्राम आरोग्य पोषण समिती">ग्राम आरोग्य पोषण समिती</option>
-    <option value="पाणी पुरवठा व स्वच्छता समिती">पाणी पुरवठा व स्वच्छता समिती</option>
-    <option value="कृषि विकास समिती">कृषि विकास समिती</option>
-    <option value="शाळा व्यवस्थापन समिती">शाळा व्यवस्थापन समिती</option>
-     <option value="बाल हक्क सरंक्षण समिती">बाल हक्क सरंक्षण समिती</option>
-     <option value="जैव विविधता समिती">जैव विविधता समिती</option>
 </select>
 
 <!-- TABLE -->
@@ -199,33 +194,17 @@ style="border-collapse:collapse;background:#fff;margin-top:15px;">
 </div>
 
 <script>
-const members = [
-  {committee:"ग्राम आरोग्य पोषण समिती", name:"", post:"अध्यक्ष", mobile:""},
-  {committee:"ग्राम आरोग्य पोषण समिती", name:"", post:"सदस्या", mobile:""},
-  {committee:"पाणी पुरवठा व स्वच्छता समिती", name:"", post:"अध्यक्ष", mobile:""},
-  {committee:"पाणी पुरवठा व स्वच्छता समिती", name:"", post:"सदस्या", mobile:""},
-  {committee:"कृषि विकास समिती", name:"", post:"अध्यक्ष", mobile:""},
-  {committee:"कृषि विकास समिती", name:"", post:"सदस्य", mobile:""},
-  {committee:"शाळा व्यवस्थापन समिती", name:"श्री. नागेश अर्जुन गायकवाड", post:"अध्यक्ष", mobile:""},
-  {committee:"शाळा व्यवस्थापन समिती", name:"सौ. रोहिणी दत्तात्रय पाटील", post:"उपाध्यक्षा", mobile:""},
-     {committee:"शाळा व्यवस्थापन समिती", name:"श्री. उमेश सोपान गायकवाड", post:"सदस्य", mobile:""},
-    {committee:"शाळा व्यवस्थापन समिती", name:"सौ. प्रियांका अनिल गरड", post:"सदस्या", mobile:""},
-    {committee:"शाळा व्यवस्थापन समिती", name:"श्री. किशोर महादेव गायकवाड", post:"सदस्य", mobile:""},
-    {committee:"शाळा व्यवस्थापन समिती", name:"सौ. सुरेखा संतोष शिंदे", post:"सदस्या", mobile:""},
-    {committee:"शाळा व्यवस्थापन समिती", name:"श्री. दिपक शिवाजी भोसले", post:"सदस्य", mobile:""},
-    {committee:"शाळा व्यवस्थापन समिती", name:"सौ. रुपाली रोहिदास पवार", post:"सदस्या", mobile:""},
-    {committee:"शाळा व्यवस्थापन समिती", name:"सौ. मेहराज फिरोज बागवान", post:"सदस्या", mobile:""},
-    {committee:"शाळा व्यवस्थापन समिती", name:"श्री. विश्वास भारत गायकवाड", post:"शिक्षणप्रेमी", mobile:""},
-    {committee:"शाळा व्यवस्थापन समिती", name:"श्री. रविकांत पांडुरंग मेनकुदळे", post:"स्था प्राधिकरण", mobile:""},
-     {committee:"शाळा व्यवस्थापन समिती", name:"सौ. गितांजली नामदेव खाडे", post:"शिक्षण प्रतिनिधी", mobile:""},
-     {committee:"शाळा व्यवस्थापन समिती", name:"चि. सार्थक रमेश गायकवाड", post:"विद्यार्थी प्रतिनिधी", mobile:""},
-     {committee:"शाळा व्यवस्थापन समिती", name:"कु. हर्षिता अनिल जगताप", post:"विद्यार्थी प्रतिनिधी", mobile:""},
-     {committee:"शाळा व्यवस्थापन समिती", name:"श्री. कैलास हरिदास काशीद", post:"सचिव", mobile:""},
-    {committee:"बाल हक्क सरंक्षण समिती", name:"", post:"अध्यक्ष", mobile:""},
-  {committee:"बाल हक्क सरंक्षण समिती", name:"", post:"सदस्य", mobile:""},
-    {committee:"जैव विविधता समिती", name:"", post:"अध्यक्ष", mobile:""},
-  {committee:"जैव विविधता समिती", name:"", post:"सदस्य", mobile:""}
-];
+const members = [{"committee":"abcd","name":"adsf","post":"saghdd","mobile":"98655658941545"},{"committee":"ds","name":"fgdgg","post":"jk","mobile":"54"}];
+
+// समिती-निवड dropdown आता members यादीतून आपोआप (जी काही समिती-नावं वापरली आहेत तीच) तयार होते
+(function(){
+  var uniq=[];
+  members.forEach(function(m){if(uniq.indexOf(m.committee)===-1)uniq.push(m.committee);});
+  var sel=document.getElementById('committeeFilter');
+  uniq.forEach(function(c){
+    var o=document.createElement('option');o.value=c;o.textContent=c;sel.appendChild(o);
+  });
+})();
 
 function loadTable(){
     const filter = document.getElementById("committeeFilter").value;
