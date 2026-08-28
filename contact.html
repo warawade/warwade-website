@@ -119,6 +119,7 @@ iframe{
     <a href="gallery.html">फोटो गॅलरी</a>
     <a href="tax.html">मालमत्ता कर</a>
     <a href="contact.html">संपर्क</a>
+    <a href="https://github.com/warawade/warwade-website/issues" target="_blank">📋 तक्रार पहा</a>
 </div>
 
 <div class="container">
@@ -203,29 +204,42 @@ iframe{
 </div>
 
 <script>
-const API_URL = "";
+// तक्रारी थेट GitHub Issues मध्ये (एक "Issue" म्हणून) साठवल्या जातात — याच repo मध्ये जिथे ही वेबसाईट
+// प्रकाशित आहे. सॉफ्टवेअरमध्ये "📋 तक्रारी पहा" ने त्या लगेच दिसतात, वेगळं Google Sheet लागत नाही.
+const GH_REPO = "warawade/warwade-website";       // उदा. "username/reponame"
+const GH_TOKEN = "";   // फक्त Issues साठीचा मर्यादित टोकन
 
 document.getElementById("complaintForm").addEventListener("submit", function(e){
     e.preventDefault();
 
-    if(!API_URL){
+    if(!GH_REPO || !GH_TOKEN){
         document.getElementById("msg").innerHTML =
             "<span class='error'>⚠️ तक्रार फॉर्म अजून सुरू केलेला नाही. कृपया थेट फोन/ईमेलवर संपर्क करा.</span>";
         return;
     }
 
-    const formData = new FormData(this);
+    const fd = new FormData(this);
+    const name = fd.get("name"), mobile = fd.get("mobile"), subject = fd.get("subject"), message = fd.get("message");
+    const self = this;
 
-    fetch(API_URL, {
+    fetch("https://api.github.com/repos/" + GH_REPO + "/issues", {
         method: "POST",
-        body: formData
+        headers: {
+            "Authorization": "token " + GH_TOKEN,
+            "Accept": "application/vnd.github+json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            title: "तक्रार: " + subject + " — " + name,
+            body: "**नाव:** " + name + "\n**मोबाईल:** " + mobile + "\n**विषय:** " + subject + "\n\n" + message,
+            labels: ["तक्रार"]
+        })
     })
-    .then(res => res.text())
+    .then(res => { if(!res.ok) throw new Error("failed"); return res.json(); })
     .then(data => {
         document.getElementById("msg").innerHTML =
             "<span class='success'>✅ तक्रार यशस्वीपणे नोंद झाली</span>";
-        this.reset();
-        console.log(data);
+        self.reset();
     })
     .catch(err => {
         document.getElementById("msg").innerHTML =
