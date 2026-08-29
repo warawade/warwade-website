@@ -194,6 +194,24 @@ gtag('config', 'G-MKCTMSRM8R');
 </div>
 
 <div class="section" style="margin-top:20px;">
+  <h2>🏛️ उपयुक्त शासकीय पंचायत अ‍ॅप्स</h2>
+
+  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:15px;">
+    <a href="https://play.google.com/store/apps/details?id=com.meri_panchayat" target="_blank">
+      <img src="images/logos/meri-panchayat.png" style="height:40px;">
+    </a>
+
+    <a href="https://play.google.com/store/apps/details?id=com.nic.gramsamvaad" target="_blank">
+      <img src="images/logos/gramsamvad.png" style="height:40px;">
+    </a>
+
+    <a href="https://play.google.com/store/apps/details?id=com.gsnirnay.app" target="_blank">
+      <img src="images/logos/panchayat-nirnay.png" style="height:40px;">
+    </a>
+  </div>
+</div>
+
+<div class="section" style="margin-top:20px;">
   <h2>🧺🍅🥕🧅🌶️आजचे बाजारभाव</h2>
 
   <div style="display:flex; flex-wrap:wrap; align-items:center; gap:15px;">
@@ -213,8 +231,14 @@ gtag('config', 'G-MKCTMSRM8R');
 <script>
 const apiKey = "b49514c717e32754db5ef2f43c71e93c";
 
-const lat = 17.96;   // Warawade (Madha)
-const lon = 75.31;
+// पत्ता/तालुका/जिल्ह्यावरून हवामान — आधी इथे वरवडे454 (ता. माढा5) चे lat/lon कायमचे (hardcoded) होते,
+// त्यामुळे कुठल्याही ग्रामपंचायतीसाठी वरवडे454चंच हवामान दिसायचं. आता सॉफ्टवेअरमध्ये भरलेल्या
+// तालुका/जिल्ह्यावरून प्रथम OpenWeatherMap च्या Geocoding API ने खरे lat/lon शोधतो (त्याच appid ने,
+// वेगळी key लागत नाही), आणि तेच पुढे हवामानासाठी वापरतो — त्यामुळे कुठल्याही गावासाठी योग्य/जवळचं
+// हवामान आपोआप दिसेल. Geocoding अयशस्वी झालं (उदा. इंटरनेट/API मर्यादा) तर आधीचे माढ्याचे lat/lon
+// शेवटचा पर्याय (fallback) म्हणून वापरतो, जेणेकरून विजेट पूर्ण बंद पडत नाही.
+const geoQuery = "माढा5, सोलापूर6, Maharashtra, IN";
+const fallbackLat = 17.96, fallbackLon = 75.31; // Madha (शेवटचा पर्याय)
 
 // English → Marathi mapping
 function weatherMarathi(main){
@@ -238,7 +262,7 @@ function weatherMarathi(main){
   }
 }
 
-
+function loadWeather(lat, lon, placeLabel){
 /* 🔹 CURRENT WEATHER */
 fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
 .then(r => r.json())
@@ -293,7 +317,7 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&app
 </div>
 
 <p style="text-align:center; font-weight:bold; margin-top:10px;">
-📍 ठिकाण : वरवडे454 (ता. माढा5)
+📍 ठिकाण : ${placeLabel}
 </p>`;
 
   });
@@ -302,6 +326,19 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&app
   document.getElementById("weather").innerHTML =
   "⚠️ हवामान माहिती सध्या उपलब्ध नाही";
 });
+}
+
+// प्रथम पत्त्यावरून खरं ठिकाण शोधायचा प्रयत्न — सापडलं नाही तर माढ्याचे जुने lat/lon वापरतो
+fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(geoQuery)}&limit=1&appid=${apiKey}`)
+.then(r => r.json())
+.then(geo => {
+  if(Array.isArray(geo) && geo.length){
+    loadWeather(geo[0].lat, geo[0].lon, geoQuery);
+  } else {
+    loadWeather(fallbackLat, fallbackLon, geoQuery);
+  }
+})
+.catch(() => loadWeather(fallbackLat, fallbackLon, geoQuery));
 </script>
 </body>
 </html>
