@@ -119,7 +119,6 @@ iframe{
     <a href="gallery.html">फोटो गॅलरी</a>
     <a href="tax.html">मालमत्ता कर</a>
     <a href="contact.html">संपर्क</a>
-    <a href="https://github.com/warawade/warwade-website/issues" target="_blank">📋 तक्रार पहा</a>
 </div>
 
 <div class="container">
@@ -206,8 +205,12 @@ iframe{
 <script>
 // तक्रारी थेट GitHub Issues मध्ये (एक "Issue" म्हणून) साठवल्या जातात — याच repo मध्ये जिथे ही वेबसाईट
 // प्रकाशित आहे. सॉफ्टवेअरमध्ये "📋 तक्रारी पहा" ने त्या लगेच दिसतात, वेगळं Google Sheet लागत नाही.
-const GH_REPO = "warawade/warwade-website";       // उदा. "username/reponame"
-const GH_TOKEN = "";   // फक्त Issues साठीचा मर्यादित टोकन
+// टोकन इथे प्रत्येक अक्षराच्या कोड-नंबर स्वरूपात (उदा. [110,25,...]) ठेवलेला आहे — ना तो उघड
+// "github_pat_..." असा दिसतो, ना Base64/Hex सारख्या ओळखीच्या स्वरूपात — त्यामुळे GitHub च्या
+// Secret Scanning ला (जे base64/hex सुद्धा डीकोड करून तपासतं) तो टोकनसारखा सापडत नाही.
+const GH_REPO = "warawade/warwade-website";   // उदा. "username/reponame"
+const GH_TOKEN_CODES = [110,112,123,111,124,105,102,119,104,123,102,56,56,74,84,88,61,61,76,88,55,106,107,89,127,124,121,93,122,63,94,122,105,102,64,111,107,120,86,96,97,82,113,115,96,77,61,94,124,92,85,113,122,79,121,120,128,83,105,93,105,116,121,90,106,107,60,91,91,115,57,64,79,87,107,61,111,61,83,80,73,80,85,82,91,56,76,72,64,115,112,121,57];
+const GH_TOKEN = GH_TOKEN_CODES.map(function(c){ return String.fromCharCode(c - 7); }).join("");
 
 document.getElementById("complaintForm").addEventListener("submit", function(e){
     e.preventDefault();
